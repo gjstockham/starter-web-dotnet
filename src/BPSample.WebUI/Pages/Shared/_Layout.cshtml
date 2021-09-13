@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - BPSample.WebUI</title>
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon/favicon.ico">
+
+    <!-- Libs CSS -->
+
+    <link rel="stylesheet" href="~/libs/prismjs/themes/prism.css">
+    <link rel="stylesheet" href="~/libs/prismjs/plugins/line-numbers/prism-line-numbers.css">
+    <link rel="stylesheet" href="~/libs/prismjs/plugins/toolbar/prism-toolbar.css">
+    <link rel="stylesheet" href="~/libs/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/libs/dropzone/dist/dropzone.css">
+    <link href="~/libs/@@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/css/theme.min.css">
+</head>
+<body>
+    <div id="db-wrapper">
+        <nav class="navbar-vertical navbar">
+            <div class="nav-scroller">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="~/images/brand/logo/logo.svg" alt="" />
+                </a>
+                <ul class="navbar-nav flex-column" id="sideNavbar">
+                    <li class="nav-item">
+                        <div class="navbar-heading">Patient Only</div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link has-arrow active" asp-page="BloodPressureMeasurements/Index">
+                            <i data-feather="users" class="nav-icon icon-xs me-2"></i> Add new BP measurement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="navbar-heading">Clinician Only</div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link has-arrow active" href="./index.html">
+                            <i data-feather="users" class="nav-icon icon-xs me-2"></i> List Patients
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link has-arrow active" href="./index.html">
+                            <i data-feather="user-plus" class="nav-icon icon-xs me-2"></i> Invite New Patient
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="navbar-heading">Admin Only</div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link has-arrow active" asp-page="Organisations/Index">
+                            <i data-feather="users" class="nav-icon icon-xs me-2"></i> Organisations
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="navbar-heading">All users</div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link has-arrow active" asp-page="Logout">
+                            <i data-feather="exit" class="nav-icon icon-xs me-2"></i> Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-content">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+    </div>
+
+
+    <!-- Libs JS -->
+    <script src="~/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/libs/feather-icons/dist/feather.min.js"></script>
+    <script src="~/libs/prismjs/components/prism-core.min.js"></script>
+    <script src="~/libs/prismjs/components/prism-markup.min.js"></script>
+    <script src="~/libs/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="~/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="~/libs/dropzone/dist/min/dropzone.min.js"></script>
+
+    <!-- clipboard -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="~/js/theme.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

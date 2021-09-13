@@ -1,0 +1,50 @@
+﻿@page
+@model BPSample.WebUI.Pages.Organisations.IndexModel
+@{
+}
+
+<!-- Container fluid -->
+<div class="container-fluid px-6 py-4">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <!-- Page header -->
+            <div>
+                <div class="border-bottom pb-4">
+                    <div class="mb-2 mb-lg-0">
+                        <h2>Organisations</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-6">
+        <div class="row mb-6">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var organisation in Model.Organisations)
+                                {
+                                    <tr>
+                                        <th scope="row">@organisation.Id</th>
+                                        <td>@organisation.Name</td>
+                                        <td>Buttons here</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- table -->
+    </div>
+</div>
