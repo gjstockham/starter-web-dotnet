@@ -1,7 +1,9 @@
-﻿namespace BPSample.Domain.Common
+﻿using MediatR;
+
+namespace BPSample.Domain.Common
 {
 
-    public interface IDomainEvent
+    public interface IDomainEvent : INotification
     {
     }
 }

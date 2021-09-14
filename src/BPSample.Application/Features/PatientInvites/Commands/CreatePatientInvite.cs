@@ -21,6 +21,8 @@
             public string EmailAddress { get; set; } = null!;
 
             public string SmsNumber { get; set; } = null!;
+
+            public Guid OrganisationId { get; set; }
         }
 
         public class Handler : IRequestHandler<Command, Guid>
@@ -34,7 +36,7 @@
 
             public async Task<Guid> Handle(Command request, CancellationToken cancellationToken)
             {
-                var patientInvite = new PatientInvite(new ChiNumber(request.CHI), request.GivenName, request.FamilyName, request.EmailAddress, request.SmsNumber);
+                var patientInvite = new PatientInvite(new ChiNumber(request.CHI), request.GivenName, request.FamilyName, request.EmailAddress, request.SmsNumber, request.OrganisationId);
 
                 repository.Add(patientInvite);
 

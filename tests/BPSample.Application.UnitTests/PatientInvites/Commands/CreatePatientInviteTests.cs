@@ -26,7 +26,8 @@
                 FamilyName = "FamilyName",
                 EmailAddress = "test@test.com",
                 CHI = "1111111111",
-                SmsNumber = "0987654321"
+                SmsNumber = "0987654321",
+                OrganisationId = Guid.NewGuid()
             };
 
             var handler = new CreatePatientInvite.Handler(repository.Object);
