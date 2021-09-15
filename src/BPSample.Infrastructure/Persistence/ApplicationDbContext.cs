@@ -25,10 +25,11 @@
             this.mediator = mediator;
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             AuditEntities();
-            return base.SaveChangesAsync(cancellationToken);
+            await DispatchDomainEventsAsync();
+            return await base.SaveChangesAsync(cancellationToken);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
