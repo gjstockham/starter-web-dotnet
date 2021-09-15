@@ -23,7 +23,7 @@
         public async Task Handle(PatientInviteCreatedEvent notification, CancellationToken cancellationToken)
         {
             var patient = new Patient(
-                                notification.PatientInvite.Chi,
+                                notification.PatientInvite.CHI,
                                 notification.PatientInvite.GivenName,
                                 notification.PatientInvite.FamilyName,
                                 notification.PatientInvite.Email,

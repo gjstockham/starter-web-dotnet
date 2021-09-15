@@ -19,7 +19,7 @@
             Guard.Against.NullOrWhiteSpace(email, nameof(email));
             Guard.Against.Default(organisationId, nameof(organisationId));
 
-            Chi = chi;
+            CHI = chi;
             GivenName = givenName;
             FamilyName = familyName;
             Email = email;
@@ -28,16 +28,16 @@
             AddDomainEvent(new PatientInviteCreatedEvent(this));
         }
 
-        public ChiNumber Chi { get; } = null!;
+        public ChiNumber CHI { get; private set; } = null!;
 
-        public string GivenName { get; } = null!;
+        public string GivenName { get; private set; } = null!;
 
-        public string FamilyName { get; } = null!;
+        public string FamilyName { get; private set; } = null!;
 
-        public string Email { get; } = null!;
+        public string Email { get; private set; } = null!;
 
-        public string SmsNumber { get; } = null!;
+        public string SmsNumber { get; private set; } = null!;
 
-        public Guid OrganisationId { get; }
+        public Guid OrganisationId { get; private set; }
     }
 }

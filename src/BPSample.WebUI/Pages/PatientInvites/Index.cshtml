@@ -18,6 +18,22 @@
         </div>
     </div>
     <div class="py-6">
+        <div class="row mb-6">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card p-4">
+                    <form method="post">
+                        <fieldset>
+                            @Html.EditorFor(x => x.GivenName)
+                            @Html.EditorFor(x => x.FamilyName)
+                            @Html.EditorFor(x => x.CHI)
+                            @Html.EditorFor(x => x.EmailAddress)
+                            @Html.EditorFor(x => x.Sms)
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

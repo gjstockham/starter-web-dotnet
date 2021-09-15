@@ -37,7 +37,7 @@
             result.Should().Be(Guid.Empty);
             repository.Verify(x => x.Add(
                 It.Is<PatientInvite>(y =>
-                    y.Chi.Value == command.CHI &&
+                    y.CHI.Value == command.CHI &&
                     y.GivenName == command.GivenName &&
                     y.FamilyName == command.FamilyName &&
                     y.Email == command.EmailAddress &&

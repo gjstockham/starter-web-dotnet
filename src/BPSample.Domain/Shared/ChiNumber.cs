@@ -6,6 +6,10 @@
 
     public class ChiNumber : ValueObject
     {
+        protected ChiNumber()
+        {
+        }
+
         public ChiNumber(string value)
         {
             Guard.Against.NullOrWhiteSpace(value, nameof(value));
@@ -15,7 +19,7 @@
             Value = value;
         }
 
-        public string Value { get; }
+        public string Value { get; } = null!;
 
         protected override IEnumerable<object> GetEqualityComponents()
         {

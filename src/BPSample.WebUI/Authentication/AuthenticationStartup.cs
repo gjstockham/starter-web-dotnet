@@ -52,6 +52,7 @@
                 });
 
             services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<ICurrentOrganisationService, CurrentOrganisationService>();
 
             return services;
         }

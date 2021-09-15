@@ -9,18 +9,18 @@
 
     public class IndexModel : PageModel
     {
-        private readonly IMediator mediator;
+        private readonly ISender sender;
 
         public IEnumerable<GetOrganisationList.OrganisationDto> Organisations { get; protected set; }
 
-        public IndexModel(IMediator mediator)
+        public IndexModel(ISender sender)
         {
-            this.mediator = mediator;
+            this.sender = sender;
         }
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            Organisations = await mediator.Send(new GetOrganisationList.Query(), cancellationToken);
+            Organisations = await sender.Send(new GetOrganisationList.Query(), cancellationToken);
         }
     }
 }

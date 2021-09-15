@@ -6,6 +6,10 @@
 
     public class Clinician : EntityBase
     {
+        protected Clinician()
+        {
+        }
+
         public Clinician(string givenName, string familyName, string email, Guid organisationId)
         {
             Guard.Against.NullOrWhiteSpace(givenName, nameof(givenName));
@@ -22,11 +26,11 @@
             AddDomainEvent(new ClinicianCreatedEvent(this));
         }
 
-        public string GivenName { get; private set; }
+        public string GivenName { get; private set; } = null!;
 
-        public string FamilyName { get; private set; }
+        public string FamilyName { get; private set; } = null!;
 
-        public string EmailAddress { get; private set; }
+        public string EmailAddress { get; private set; } = null!;
 
         public Guid OrganisationId { get; private set; }
     }

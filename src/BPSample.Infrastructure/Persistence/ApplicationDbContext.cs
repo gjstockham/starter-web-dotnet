@@ -17,8 +17,6 @@
         private readonly ICurrentUserService currentUserService;
         private readonly IMediator mediator;
 
-        public DbSet<Organisation> Organisations => Set<Organisation>();
-
         public ApplicationDbContext([NotNullAttribute] DbContextOptions options, IDateTime dateTime, ICurrentUserService currentUserService, IMediator mediator)
             : base(options)
         {
@@ -36,6 +34,9 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new OrganisationConfiguration());
+            modelBuilder.ApplyConfiguration(new PatientInviteConfiguration());
+            modelBuilder.ApplyConfiguration(new PatientConfiguration());
+            modelBuilder.ApplyConfiguration(new ClinicianConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

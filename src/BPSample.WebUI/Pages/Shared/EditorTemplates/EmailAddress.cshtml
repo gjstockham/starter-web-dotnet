@@ -1,0 +1,6 @@
+﻿@model string
+    <div class="mb-3">
+        <span class="invalid-feedback" asp-validation-for="@Model"></span>
+        <label class="form-label" asp-for="@Model"></label>
+        <input class="form-control" type="email" asp-for="@Model">
+    </div>

@@ -7,6 +7,10 @@
 
     public class Patient : EntityBase
     {
+        protected Patient()
+        {
+        }
+
         public Patient(ChiNumber chi, string givenName, string familyName, string emailAddress, string mobileNumber, Guid organisationId)
         {
             Guard.Against.NullOrWhiteSpace(givenName, nameof(givenName));

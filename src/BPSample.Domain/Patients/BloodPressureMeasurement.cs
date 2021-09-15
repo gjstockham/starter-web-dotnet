@@ -6,6 +6,10 @@
 
     public class BloodPressureMeasurement : ValueObject
     {
+        protected BloodPressureMeasurement()
+        {
+        }
+
         public BloodPressureMeasurement(int systolicValuemmHg, int diastolicValuemmHg, DateTimeOffset date)
         {
             Systolic = systolicValuemmHg;
